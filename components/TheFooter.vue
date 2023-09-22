@@ -9,7 +9,7 @@
         class="w-28 rounded-full mb-6 hover:opacity-80"
         alt="portraite - johan larsson"
       />
-      <div class="px-4 flex justify-between items-center">
+      <div class="px-4 flex items-center justify-between">
         <span>Johan Larsson</span>
       </div>
       <div class="px-4 flex items-center justify-between">
