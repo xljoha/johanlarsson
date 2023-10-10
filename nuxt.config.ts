@@ -9,7 +9,10 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ["@nuxt/content"],
+  dayjs: {
+    plugins: ["duration", "relativeTime", "advancedFormat", "weekday"],
+  },
+  modules: ["@nuxt/content", "@nathanchase/nuxt-dayjs-module"],
   content: {
     markdown: {
       anchorLinks: false,

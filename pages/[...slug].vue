@@ -1,13 +1,5 @@
 <template>
-  <main>
-    <TheNav />
-    <div class="md:flex justify-center">
-      <div class="mx-5 max-w-3xl">
-        <ContentDoc />
-      </div>
-    </div>
-    <TheFooter />
-  </main>
+  <ContentDoc />
 </template>
 
 <script setup></script>

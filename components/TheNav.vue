@@ -5,7 +5,7 @@
         <div v-for="item in navigation">
           <NuxtLink
             :to="item._path"
-            class="text-xl py-2 mx-4 no-underline relative text-xl uppercase w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-100 after:origin-center"
+            class="text-xl py-2 mx-2 md:mx-4 no-underline relative text-xl md:uppercase w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-100 after:origin-center"
           >
             <div class="flex items-center justify-between">
               <svg
@@ -51,6 +51,26 @@
             </div>
           </NuxtLink>
         </div>
+        <NuxtLink
+          to="/pomodoro"
+          class="text-xl py-2 mx-2 md:mx-4 no-underline relative text-xl md:uppercase w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-100 after:origin-center"
+        >
+          <div class="flex items-center justify-between">
+            <svg
+              class="mr-2"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M10.54 14.53L8.41 12.4l-1.06 1.06l3.18 3.18l6-6l-1.06-1.06l-4.93 4.95M12 20a7 7 0 0 1-7-7a7 7 0 0 1 7-7a7 7 0 0 1 7 7a7 7 0 0 1-7 7m0-16a9 9 0 0 0-9 9a9 9 0 0 0 9 9a9 9 0 0 0 9-9a9 9 0 0 0-9-9m-4.12-.61L6.6 1.86L2 5.71l1.29 1.53l4.59-3.85M22 5.72l-4.6-3.86l-1.29 1.53l4.6 3.86L22 5.72Z"
+              />
+            </svg>
+            <span>Timer</span>
+          </div>
+        </NuxtLink>
       </div>
       <hr class="h-0.5 border-t-0 bg-neutral-100 opacity-100 dark:opacity-50" />
     </nav>
