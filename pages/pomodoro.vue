@@ -21,38 +21,39 @@
 </template>
 
 <script setup>
-let startTimerCount = 1500;
+const startTimerCount = 2; //1500;
 let timerCount = ref(startTimerCount);
-let timerID = ref(null);
+let isRunning = ref(false);
+let myWorker = null;
 
 const toggleTimer = () => {
-  isRunning.value ? stopTimer() : startTimer();
-};
+  if (!myWorker) {
+    myWorker = new Worker("worker.js");
+  }
+  isRunning.value = !isRunning.value;
+  if (timerCount.value === 0) {
+    timerCount.value = startTimerCount;
+  }
 
-const startTimer = () => {
-  if (!timerID.value) {
-    timerID.value = setInterval(() => {
+  myWorker.onmessage = () => {
+    if (isRunning.value) {
       if (timerCount.value === 0) {
-        stopTimer();
+        isRunning.value = false;
         playSound();
       } else {
         timerCount.value--;
       }
-    }, 1000);
-  }
-};
-
-const stopTimer = () => {
-  clearInterval(timerID.value);
-  timerID.value = null;
+    }
+  };
 };
 
 const resetTimer = () => {
-  if (timerID.value) {
-    clearInterval(timerID.value);
-    timerID.value = null;
-  }
+  isRunning.value = false;
   timerCount.value = startTimerCount;
+  if (myWorker) {
+    myWorker.terminate();
+    myWorker = null;
+  }
 };
 
 const prettyTime = computed(() => {
@@ -61,9 +62,9 @@ const prettyTime = computed(() => {
   return str_pad_left(minutes, "0", 2) + ":" + str_pad_left(seconds, "0", 2);
 });
 
-const isRunning = computed(() => {
+/* const isRunning = computed(() => {
   return timerID.value ? true : false;
-});
+}); */
 
 function str_pad_left(string, pad, length) {
   return (new Array(length + 1).join(pad) + string).slice(-length);
