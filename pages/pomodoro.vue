@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-const startTimerCount = 2; //1500;
+const startTimerCount = 1500;
 let timerCount = ref(startTimerCount);
 let isRunning = ref(false);
 let myWorker = null;
