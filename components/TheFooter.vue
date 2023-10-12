@@ -42,7 +42,7 @@
         </svg>
         <span><a href="http://github.com/xljoha">Github</a></span>
       </div>
-      <div class="px-4"><a href="tel:9051290512">+4676618116</a></div>
+      <div class="px-4"><a href="tel:9051290512">+46766181716</a></div>
       <div class="px-4 text-xs mt-4">
         Built with Nuxt 3, Nuxt Content and Tailwind
       </div>
