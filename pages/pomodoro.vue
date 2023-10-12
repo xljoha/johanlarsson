@@ -25,6 +25,11 @@ const startTimerCount = 1500;
 let timerCount = ref(startTimerCount);
 let isRunning = ref(false);
 let myWorker = null;
+var beepsound = null;
+
+onMounted(() => {
+  beepsound = new Audio("/sound/mixkit-urgent-simple-tone-loop-2976.wav");
+});
 
 const toggleTimer = () => {
   if (!myWorker) {
@@ -71,7 +76,6 @@ function str_pad_left(string, pad, length) {
 }
 
 function playSound() {
-  var beepsound = new Audio("/sound/mixkit-urgent-simple-tone-loop-2976.wav");
   beepsound.play();
 }
 </script>
