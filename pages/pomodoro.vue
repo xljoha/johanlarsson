@@ -27,6 +27,10 @@ let isRunning = ref(false);
 let myWorker = null;
 var beepsound = null;
 
+useHead({
+  title: "Pomodoro",
+});
+
 onMounted(() => {
   beepsound = new Audio("/sound/mixkit-urgent-simple-tone-loop-2976.wav");
 });
